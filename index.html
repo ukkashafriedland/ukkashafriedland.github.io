@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ukkasha Fried Land | أوكاشا فرايد لاند</title>
+<meta name="theme-color" content="#231F20">
+<meta property="og:title" content="Ukkasha Fried Land - Touch here to view Menu & Order Online 🍗">
+<meta property="og:description" content="اضغط هنا لمشاهدة المنيو والطلب اونلاين | Digital Menu & Fast WhatsApp Ordering">
+<meta property="og:image" content="img/og.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E31E24; --red-dark:#B3141A; --ink:#231F20; --ink-2:#2f2a2b;
+  --yellow:#FFD200; --bg:#f4f1ee; --card:#ffffff; --text:#1d1a1b; --muted:#6b6566;
+  --green:#25D366;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins','Tajawal',system-ui,sans-serif;background:var(--bg);color:var(--text);padding-bottom:96px;-webkit-tap-highlight-color:transparent}
+.ar{font-family:'Tajawal',sans-serif;direction:rtl}
+img{display:block;max-width:100%}
+
+/* announcement */
+.announce{background:var(--red);color:#fff;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;position:sticky;top:0;z-index:50;padding:5px 0;border-bottom:2px solid var(--yellow)}
+.announce span{display:inline-block;padding-left:100%;animation:marquee 26s linear infinite}
+@keyframes marquee{to{transform:translateX(-100%)}}
+
+/* header */
+.header{background:var(--ink);color:#fff;padding:14px 16px 18px;text-align:center;position:relative;overflow:hidden}
+.header::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;border:2px solid rgba(255,210,0,.18)}
+.status-row{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.pill{font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
+.pill.open{background:#1b5e20;border-color:#43a047}
+.pill.closed{background:#7f1d1d;border-color:#ef4444}
+.logo{max-width:340px;width:86%;margin:0 auto 6px}
+.tagline{font-size:12.5px;color:var(--yellow);font-weight:600;letter-spacing:.3px}
+.tagline .ar{display:block;font-size:14px;margin-top:2px}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.quick a{display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;color:#fff;font-weight:700;font-size:13px;padding:10px;border-radius:12px;background:var(--ink-2);border:1px solid rgba(255,210,0,.35)}
+.quick a.wa{background:var(--green);border-color:var(--green)}
+.address{margin-top:10px;font-size:12px;color:#d8d2d3}
+.address .ar{display:block;font-size:13px}
+
+/* categories */
+.cats{position:sticky;top:27px;z-index:40;background:var(--bg);padding:10px 12px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid #e5dfdb}
+.cats::-webkit-scrollbar{display:none}
+.cat{flex:0 0 auto;border:1.5px solid #ddd5d0;background:#fff;color:var(--ink);border-radius:14px;padding:7px 13px;font-weight:700;font-size:12.5px;cursor:pointer;line-height:1.25;text-align:center}
+.cat span{display:block;font-family:'Tajawal';font-size:12.5px}
+.cat.active{background:var(--red);border-color:var(--red);color:#fff}
+
+.tools{padding:12px 16px 0;display:grid;gap:10px}
+.pdf-btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;background:var(--ink);color:#fff;border-radius:14px;padding:11px;font-weight:700;font-size:13.5px;border:1.5px solid var(--yellow)}
+.pdf-btn small{display:block;font-family:'Tajawal';font-size:13px;color:var(--yellow)}
+.search{display:flex;align-items:center;background:#fff;border:1.5px solid #ddd5d0;border-radius:14px;padding:0 12px}
+.search input{flex:1;border:0;outline:0;padding:11px 8px;font-size:14px;background:transparent;font-family:inherit}
+
+/* menu */
+.wrap{max-width:900px;margin:0 auto;padding:12px 16px}
+.banner{position:relative;border-radius:18px;overflow:hidden;margin-bottom:14px;background:var(--ink)}
+.banner img{width:100%;max-height:260px;object-fit:contain;background:#fff}
+.banner .tag{position:absolute;left:12px;top:12px;background:var(--yellow);color:var(--ink);font-weight:800;font-size:12px;padding:5px 10px;border-radius:20px}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:620px){.grid{grid-template-columns:1fr 1fr}}
+.item{background:var(--card);border-radius:16px;overflow:hidden;display:flex;box-shadow:0 2px 10px rgba(35,31,32,.06);border:1px solid #eee7e3}
+.item .ph{width:118px;min-width:118px;background:#fff;display:flex;align-items:center;justify-content:center}
+.item .ph img{width:100%;height:118px;object-fit:cover}
+.item .bd{flex:1;padding:10px 12px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.item h3{font-size:14px;font-weight:700;line-height:1.25}
+.item h3 .ar{display:block;font-size:15px;color:var(--red);font-weight:800}
+.item p{font-size:11.5px;color:var(--muted);line-height:1.35}
+.opts{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.opts label{font-size:11.5px;font-weight:700;border:1.5px solid #ddd5d0;border-radius:20px;padding:3px 9px;cursor:pointer;user-select:none}
+.opts input{display:none}
+.opts input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
+.row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:4px}
+.price{font-weight:800;color:var(--ink);font-size:15px}
+.price small{font-size:11px;color:var(--muted);font-weight:600}
+.add{background:var(--red);color:#fff;border:0;border-radius:10px;padding:7px 12px;font-weight:700;font-size:12.5px;cursor:pointer;font-family:inherit}
+.add:active{transform:scale(.97)}
+.empty{text-align:center;padding:30px;color:var(--muted)}
+
+.footer{text-align:center;padding:22px 10px;font-size:12px;color:#bdb6b7;background:var(--ink);margin-top:26px}
+.footer b{color:#fff}
+
+/* cart bar */
+.cartbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:var(--ink);color:#fff;border-radius:16px;padding:10px 12px 10px 16px;display:none;align-items:center;justify-content:space-between;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:620px;margin:0 auto}
+.cartbar b{color:var(--yellow)}
+.cartbar button{background:var(--red);color:#fff;border:0;border-radius:12px;padding:10px 14px;font-weight:700;font-family:inherit;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;font-size:13px;padding:8px 14px;border-radius:20px;opacity:0;transition:.25s;z-index:70;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* modals */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:80}
+.sheet{background:#f8f6f4;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;border-radius:20px 20px 0 0;padding:16px}
+@media(min-width:620px){.modal{align-items:center}.sheet{border-radius:20px}}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #e7e0dc;padding-bottom:10px;margin-bottom:12px}
+.sheet-h h3{font-size:16px}
+.x{font-size:22px;cursor:pointer;background:none;border:0;line-height:1}
+.back{font-size:18px;cursor:pointer;background:none;border:0;color:var(--red);margin-right:6px}
+.ci{background:#fff;border:1px solid #eee7e3;border-radius:12px;padding:10px;margin-bottom:8px}
+.ci-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.ci-name{font-size:13.5px;font-weight:700}
+.ci-price{font-size:12px;color:var(--red);font-weight:700}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:28px;height:28px;border-radius:8px;border:0;background:var(--ink);color:#fff;font-weight:800;cursor:pointer}
+.qty .del{background:#eee;color:#b91c1c}
+.note{width:100%;margin-top:6px;border:1px dashed #cfc7c3;border-radius:8px;padding:6px 9px;font-size:12px;font-family:inherit}
+.total{text-align:right;font-weight:800;font-size:16px;border-top:2px dashed #ddd;padding-top:10px;margin:8px 0 12px}
+.total span{color:var(--red)}
+.btn-main{width:100%;background:var(--green);color:#fff;border:0;border-radius:14px;padding:13px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.type{background:#fff;border:2px solid #e7e0dc;border-radius:14px;padding:18px 8px;text-align:center;cursor:pointer;font-weight:700}
+.type div:first-child{font-size:30px;margin-bottom:6px}
+.type .ar{color:var(--red);display:block}
+.card{background:#fff;border:1px solid #eee7e3;border-radius:12px;padding:12px;margin-bottom:10px}
+.fg{margin-bottom:10px}
+.fg label{display:block;font-size:12.5px;font-weight:700;margin-bottom:5px}
+.fg input{width:100%;padding:10px 12px;border:1px solid #d6cfcb;border-radius:10px;font-size:14px;font-family:inherit}
+.badge{display:inline-block;background:#fff4c2;color:#5b4500;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;margin-bottom:10px}
+.rates{background:#fff8e1;border:1px solid #ffe082;border-radius:12px;padding:10px 12px;font-size:12px;margin-bottom:10px;display:none}
+.rates table{width:100%;margin-top:4px}
+.alert{display:none;background:#fee2e2;color:#991b1b;font-size:12px;font-weight:700;padding:8px 10px;border-radius:10px;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<div class="announce"><span id="announceText"></span></div>
+
+<header class="header" id="top">
+  <div class="status-row">
+    <div class="pill" id="clock">Saudi Time --:--</div>
+    <div class="pill" id="status" style="display:none"></div>
+  </div>
+  <img class="logo" src="img/logo.jpg" alt="Ukkasha Fried Land - أوكاشا فرايد لاند">
+  <div class="tagline">Crispy · Juicy · Chicken-licious!<span class="ar">بروستد مقرمش وطازج</span></div>
+  <div class="quick">
+    <a id="callBtn" href="#">📞 <span id="phoneTxt"></span></a>
+    <a id="mapBtn" href="#" target="_blank" rel="noopener">📍 Location / الموقع</a>
+  </div>
+  <div class="address" id="addressTxt"></div>
+</header>
+
+<nav class="cats" id="cats"></nav>
+
+<div class="tools">
+  <a class="pdf-btn" href="ukkasha-menu.pdf" target="_blank" rel="noopener">📄 <div>View Full Menu (PDF)<small>عرض المنيو الكامل</small></div></a>
+  <div class="search">🔍<input id="search" type="search" placeholder="Search menu... / ابحث في المنيو" oninput="render()"></div>
+</div>
+
+<main class="wrap">
+  <div id="banner"></div>
+  <div class="grid" id="menu"></div>
+</main>
+
+<footer class="footer">
+  <p><b>© Ukkasha Fried Land</b> · أوكاشا فرايد لاند</p>
+  <p style="margin-top:4px">Prices in SAR · الأسعار بالريال السعودي</p>
+</footer>
+
+<div class="cartbar" id="cartbar">
+  <div><b id="cCount">0</b> items · <b id="cTotal">0</b> SAR</div>
+  <button onclick="openModal('cartModal')">View Cart / السلة 🛒</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- cart -->
+<div class="modal" id="cartModal" onclick="if(event.target===this)closeModal(this.id)">
+  <div class="sheet">
+    <div class="sheet-h"><h3>Your Cart / سلة الطلب 🛒</h3><button class="x" onclick="closeModal('cartModal')">✕</button></div>
+    <div id="cartList"></div>
+    <div class="total">Subtotal: <span id="cSub">0.00</span> SAR</div>
+    <button class="btn-main" onclick="toType()">Proceed / متابعة الطلب ➜</button>
+  </div>
+</div>
+
+<!-- order type -->
+<div class="modal" id="typeModal" onclick="if(event.target===this)closeModal(this.id)">
+  <div class="sheet" style="text-align:center">
+    <div class="sheet-h"><div><button class="back" onclick="closeModal('typeModal');openModal('cartModal')">⬅</button><b>Order Type / نوع الطلب</b></div><button class="x" onclick="closeModal('typeModal')">✕</button></div>
+    <div class="types">
+      <div class="type" onclick="chooseType('delivery')"><div>🛵</div>Delivery<span class="ar">توصيل</span></div>
+      <div class="type" onclick="chooseType('pickup')"><div>🛍️</div>Pick up<span class="ar">استلام من الفرع</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- checkout -->
+<div class="modal" id="checkoutModal" onclick="if(event.target===this)closeModal(this.id)">
+  <div class="sheet">
+    <div class="sheet-h"><div><button class="back" onclick="closeModal('checkoutModal');openModal('typeModal')">⬅</button><b>Order Details / تفاصيل الطلب</b></div><button class="x" onclick="closeModal('checkoutModal')">✕</button></div>
+    <div style="text-align:center"><span class="badge" id="typeBadge"></span></div>
+    <div class="rates" id="rates"></div>
+    <div class="alert" id="minAlert"></div>
+    <div class="card">
+      <div class="fg"><label>Name / الاسم *</label><input id="cName" placeholder="e.g. Abu Muhammad"></div>
+      <div class="fg" id="addrGroup"><label>Address / Landmark – العنوان *</label><input id="cAddr" placeholder="e.g. Street, building, landmark"></div>
+      <div class="fg"><label>Notes / ملاحظات</label><input id="cNotes" placeholder="Any notes for the order"></div>
+    </div>
+    <div class="card" id="summary" style="font-size:13px"></div>
+    <button class="btn-main" onclick="sendOrder()">Send Order on WhatsApp / ارسال الطلب 💬</button>
+  </div>
+</div>
+
+<script>
+/* ========= SHOP SETTINGS (edit here) ========= */
+const SHOP = {
+  name: "UKKASHA FRIED LAND",
+  phoneDisplay: "054 415 2213",
+  phoneTel: "+966544152213",
+  whatsapp: "966544152213",              // WhatsApp number that receives orders (no + or spaces)
+  addressEn: "Abi Said Al Khadri, Al Khaleej, Riyadh",
+  addressAr: "أبي سعيد الخدري، الخليج، الرياض",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Ukkasha Fried Land Abi Said Al Khadri Al Khaleej Riyadh"),
+  openTime: null,      // e.g. "12:30"  (Saudi time). null = don't show open/closed
+  closeTime: null,     // e.g. "01:50"  (can be after midnight)
+  deliveryRates: [],   // e.g. [["0 - 3 km",4],["3 - 5 km",6]]  empty = hide table
+  minDeliveryFood: 0   // minimum food total for delivery (drinks excluded). 0 = no minimum
+};
+
+/* ========= MENU ========= */
+const CATS = [
+  {id:"broast",  en:"BROAST",   ar:"بروستد", banner:"family-pack"},
+  {id:"burger",  en:"BURGER",   ar:"برجر",   banner:"fillet-burger"},
+  {id:"shawarma",en:"SHAWARMA", ar:"شاورما", banner:"shawarma-arabi-double"},
+  {id:"pizza",   en:"PIZZA",    ar:"بيتزا",  banner:"pizza-ukkasha"},
+  {id:"juices",  en:"JUICES",   ar:"عصائر",  banner:null},
+  {id:"sides",   en:"SIDES",    ar:"إضافات", banner:null},
+  {id:"drinks",  en:"DRINKS",   ar:"مشروبات",banner:null}
+];
+const SPICY = [{en:"Regular",ar:"عادي"},{en:"Spicy",ar:"حراق"}];
+const LS = (l,s)=>[{en:"Large",ar:"كبير",price:l},{en:"Small",ar:"صغير",price:s}];
+const SL = (s,l)=>[{en:"Small",ar:"صغير",price:s},{en:"Large",ar:"كبير",price:l}];
+const MENU = [
+  // BROAST
+  {id:"b1",cat:"broast",en:"Family Pack",ar:"بروست عائلة",price:49,img:"family-pack",desc:"10 pcs Broasted, 1 Ltr Pepsi, Fries, Kubus, Garlic / ١٠ قطع دجاج، ١ لتر بيبسي، بطاطس، خبز، ثوم"},
+  {id:"b2",cat:"broast",en:"Chicken Broast Crispy (4 Pcs)",ar:"بروستد دجاج مقرمش",price:19,img:"broast-crispy",flavors:SPICY},
+  {id:"b3",cat:"broast",en:"Chicken Broast (4 Pcs)",ar:"بروستد دجاج",price:18,img:"broast-4",flavors:SPICY},
+  {id:"b4",cat:"broast",en:"Chicken Broast (2 Pcs)",ar:"بروستد دجاج",price:12,img:"broast-2",flavors:SPICY},
+  {id:"b5",cat:"broast",en:"Fish Broast (6 Pcs)",ar:"بروستد سمك",price:22,img:"fish-broast",flavors:SPICY},
+  {id:"b6",cat:"broast",en:"Shrimp Broast (8 Pcs)",ar:"بروستد جمبري",price:24,img:"shrimp-broast",flavors:SPICY},
+  {id:"b7",cat:"broast",en:"Chicks Strips (8 Pcs)",ar:"دجاج ستربس",price:20,img:"strips"},
+  {id:"b8",cat:"broast",en:"Chicken Nugget (8 Pcs)",ar:"مسحب دجاج",price:17,img:"nugget"},
+  {id:"b9",cat:"broast",en:"Chicken Cheese Stick (8 Pcs)",ar:"مسحب دجاج بالجبن",price:18,img:"cheese-stick"},
+  // BURGER
+  {id:"u1",cat:"burger",en:"Chicken Fillet Burger",ar:"برجر فيليه دجاج",price:18,img:"fillet-burger"},
+  {id:"u2",cat:"burger",en:"Beef Burger",ar:"برجر لحم",img:"beef-burger",sizes:[{en:"Single",ar:"عادي",price:11},{en:"Double",ar:"دبل",price:15}]},
+  {id:"u3",cat:"burger",en:"Chicken Burger",ar:"برجر دجاج",price:10,img:"chicken-burger"},
+  {id:"u4",cat:"burger",en:"Chicken Burger Double",ar:"برجر دجاج دبل",price:14,img:"chicken-burger-double"},
+  {id:"u5",cat:"burger",en:"Zinger Chicken",ar:"زنجر دجاج",price:14,img:"zinger"},
+  {id:"u6",cat:"burger",en:"Shrimp Burger",ar:"برجر روبيان",price:14,img:"shrimp-burger"},
+  {id:"u7",cat:"burger",en:"Fish Fillet Burger",ar:"برجر فيليه سمك",price:14,img:"fish-fillet-burger"},
+  // SHAWARMA & SANDWICH
+  {id:"s1",cat:"shawarma",en:"Shawarma Arabi Double",ar:"صحن عربي دبل",price:23,img:"shawarma-arabi-double"},
+  {id:"s2",cat:"shawarma",en:"Shawarma Arabi",ar:"صحن عربي",price:13,img:"shawarma-arabi"},
+  {id:"s3",cat:"shawarma",en:"Shawarma Plate",ar:"شاورما صحن",img:"shawarma-plate",sizes:[{en:"Regular",ar:"عادي",price:15},{en:"Large",ar:"كبير",price:22}]},
+  {id:"s4",cat:"shawarma",en:"Ukkasha Chicken Loaded",ar:"أوكاشا دجاج محمل",price:15,img:"chicken-loaded"},
+  {id:"s5",cat:"shawarma",en:"Shawarma Sarookh",ar:"شاورما صاروخ",price:11,img:"shawarma-sarookh"},
+  {id:"s6",cat:"shawarma",en:"Shawarma Roll",ar:"شاورما صغير",price:6,img:"shawarma-roll"},
+  {id:"s7",cat:"shawarma",en:"Twister",ar:"تويستر",price:10,img:"twister"},
+  {id:"s8",cat:"shawarma",en:"Fish Sandwich Fillet",ar:"فيليه ساندويتش سمك",price:14,img:"fish-sandwich"},
+  {id:"s9",cat:"shawarma",en:"Nuggets Sandwich",ar:"ساندويتش ناجتس",price:10,img:"nuggets-sandwich"},
+  {id:"s10",cat:"shawarma",en:"Shrimp Sandwich",ar:"ساندويتش روبيان",price:14,img:"shrimp-sandwich"},
+  // PIZZA
+  {id:"p1",cat:"pizza",en:"Ukkasha Pizza",ar:"بيتزا أكاشا",img:"pizza-ukkasha",sizes:LS(29,18)},
+  {id:"p2",cat:"pizza",en:"Pizza Daynametic",ar:"بيتزا ديناميت",img:"pizza-daynametic",sizes:LS(28,17)},
+  {id:"p3",cat:"pizza",en:"Beef Mixed",ar:"لحم مشكل",img:"pizza-beef-mixed",sizes:LS(28,17)},
+  {id:"p4",cat:"pizza",en:"Chicken BBQ",ar:"دجاج باربكيو",img:"pizza-bbq",sizes:LS(28,17)},
+  {id:"p5",cat:"pizza",en:"Chicken Mix",ar:"دجاج مشكل",img:"pizza-chicken-mix",sizes:LS(28,17)},
+  {id:"p6",cat:"pizza",en:"Pizza Ranch",ar:"بيتزا رانش",img:"pizza-ranch",sizes:LS(28,17)},
+  {id:"p7",cat:"pizza",en:"Pepperoni",ar:"بيبروني",img:"pizza-pepperoni",sizes:LS(25,17)},
+  {id:"p8",cat:"pizza",en:"Pizza Bulbul",ar:"بيتزا بلبل",img:"pizza-bulbul",sizes:LS(23,15)},
+  {id:"p9",cat:"pizza",en:"Pizza Jubna",ar:"بيتزا جبنة",img:"pizza-jubna",sizes:LS(23,15)},
+  {id:"p10",cat:"pizza",en:"Pizza Vegetable",ar:"بيتزا خضار",img:"pizza-vegetable",sizes:LS(20,14)},
+  // JUICES
+  {id:"j1",cat:"juices",drink:true,en:"Strawberry",ar:"فراولة",img:"strawberry",sizes:LS(8,6)},
+  {id:"j2",cat:"juices",drink:true,en:"Banana",ar:"موز",img:"banana",sizes:LS(8,6)},
+  {id:"j3",cat:"juices",drink:true,en:"Lemon Mint",ar:"ليمون نعناع",img:"lemon-mint",sizes:LS(8,6)},
+  {id:"j4",cat:"juices",drink:true,en:"Mojito",ar:"موخيتو",price:10,img:"mojito"},
+  {id:"j5",cat:"juices",drink:true,en:"Araisee",ar:"أرايسيه",img:"araisee",sizes:LS(12,10)},
+  // SIDES
+  {id:"x1",cat:"sides",en:"French Fries",ar:"بطاطس",img:"fries",sizes:SL(5,10)},
+  {id:"x2",cat:"sides",en:"French Fries Box",ar:"بطاطس",price:9,img:"fries-tray"},
+  {id:"x3",cat:"sides",en:"Onion Rings",ar:"حلقات البصل",img:"onion-rings",sizes:SL(6,11)},
+  {id:"x4",cat:"sides",en:"Potato Crispy",ar:"كرسبي",img:"potato-crispy",sizes:SL(6,11)},
+  {id:"x5",cat:"sides",en:"Coleslaw",ar:"سلطة ملفوف",price:6,img:"coleslaw"},
+  {id:"x6",cat:"sides",en:"Hummus",ar:"حمص",price:4,img:"hummus"},
+  {id:"x7",cat:"sides",en:"Garlic Sauce",ar:"ثوم عادي",price:1,img:"garlic"},
+  // DRINKS
+  {id:"d1",cat:"drinks",drink:true,en:"Soft Drink Can",ar:"مشروب غازي",price:3,img:"cans",flavors:[{en:"Pepsi",ar:"بيبسي"},{en:"7UP",ar:"سفن اب"},{en:"Mirinda",ar:"ميرندا"}]}
+];
+
+/* ========= APP ========= */
+let cart = {}, current = "broast", orderType = "delivery";
+const $ = id => document.getElementById(id);
+const fmt = n => n.toFixed(2);
+
+function init(){
+  $("announceText").textContent = `🍗 ${SHOP.name} — Crispy Broast, Burgers, Shawarma & Pizza | 📍 ${SHOP.addressEn} | 📞 ${SHOP.phoneDisplay}   ✦   أوكاشا فرايد لاند — ${SHOP.addressAr}`;
+  $("phoneTxt").textContent = SHOP.phoneDisplay; $("callBtn").href = "tel:" + SHOP.phoneTel;
+  $("mapBtn").href = SHOP.mapsUrl;
+  $("addressTxt").innerHTML = `📍 ${SHOP.addressEn}<span class="ar">${SHOP.addressAr}</span>`;
+  $("cats").innerHTML = CATS.map(c=>`<button class="cat${c.id===current?' active':''}" data-cat="${c.id}" onclick="pickCat('${c.id}')">${c.en}<span>${c.ar}</span></button>`).join("");
+  tick(); setInterval(tick, 1000); render();
+}
+function saudiNow(){ const n=new Date(); return new Date(n.getTime()+n.getTimezoneOffset()*60000+3*3600000); }
+function tick(){
+  const d=saudiNow(), p=v=>String(v).padStart(2,"0");
+  $("clock").textContent = `Saudi Time ${p(d.getHours())}:${p(d.getMinutes())}`;
+  if(!SHOP.openTime||!SHOP.closeTime) return;
+  const m=d.getHours()*60+d.getMinutes(), t=s=>{const[a,b]=s.split(":").map(Number);return a*60+b};
+  const o=t(SHOP.openTime), c=t(SHOP.closeTime);
+  const open = o<c ? (m>=o&&m<c) : (m>=o||m<c);
+  const el=$("status"); el.style.display="block";
+  el.textContent = open ? "🟢 OPEN NOW · مفتوح" : "🔴 CLOSED · مغلق";
+  el.className = "pill " + (open?"open":"closed");
+}
+function pickCat(id){ current=id; $("search").value=""; document.querySelectorAll(".cat").forEach(b=>b.classList.toggle("active",b.dataset.cat===id)); render(); window.scrollTo({top:$("cats").offsetTop-30,behavior:"smooth"}); }
+
+function render(){
+  const q=$("search").value.trim().toLowerCase();
+  let list;
+  if(q){ list=MENU.filter(i=>(i.en+" "+i.ar+" "+(i.desc||"")).toLowerCase().includes(q)); $("banner").innerHTML=""; document.querySelectorAll(".cat").forEach(b=>b.classList.remove("active")); }
+  else { list=MENU.filter(i=>i.cat===current); const c=CATS.find(c=>c.id===current);
+    $("banner").innerHTML = c&&c.banner ? `<div class="banner"><div class="tag">⭐ Best Seller · الأكثر مبيعاً</div><img src="img/${c.banner}.jpg" alt=""></div>` : ""; }
+  $("menu").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">No items found · لا توجد نتائج</div>`;
+}
+function optsHTML(item,key,arr,withPrice){
+  return `<div class="opts">${arr.map((o,i)=>`<input type="radio" id="${item.id}-${key}-${i}" name="${item.id}-${key}" value="${i}" ${i===0?"checked":""} onchange="updPrice('${item.id}')"><label for="${item.id}-${key}-${i}">${o.en} / ${o.ar}${withPrice?` · ${o.price}`:""}</label>`).join("")}</div>`;
+}
+function card(i){
+  const price = i.sizes ? i.sizes[0].price : i.price;
+  return `<div class="item">
+    <div class="ph"><img loading="lazy" src="img/${i.img}.jpg" alt="${i.en}"></div>
+    <div class="bd">
+      <h3>${i.en}<span class="ar">${i.ar}</span></h3>
+      ${i.desc?`<p>${i.desc}</p>`:""}
+      ${i.sizes?optsHTML(i,"size",i.sizes,false):""}
+      ${i.flavors?optsHTML(i,"flv",i.flavors,false):""}
+      <div class="row"><div class="price" id="pr-${i.id}">${fmt(price)} <small>SAR</small></div>
+      <button class="add" onclick="add('${i.id}')">+ Add / إضافة</button></div>
+    </div></div>`;
+}
+function sel(item,key){ const r=document.querySelector(`input[name="${item.id}-${key}"]:checked`); return r?Number(r.value):0; }
+function updPrice(id){ const i=MENU.find(x=>x.id===id); if(i.sizes) $("pr-"+id).innerHTML=`${fmt(i.sizes[sel(i,"size")].price)} <small>SAR</small>`; }
+function add(id){
+  const i=MENU.find(x=>x.id===id);
+  const si=i.sizes?sel(i,"size"):-1, fi=i.flavors?sel(i,"flv"):-1;
+  const price=i.sizes?i.sizes[si].price:i.price;
+  let en=i.en, ar=i.ar;
+  if(si>=0){en+=` (${i.sizes[si].en})`; ar+=` (${i.sizes[si].ar})`;}
+  if(fi>=0){en+=` - ${i.flavors[fi].en}`; ar+=` - ${i.flavors[fi].ar}`;}
+  const key=`${id}_${si}_${fi}`;
+  if(cart[key]) cart[key].qty++; else cart[key]={key,en,ar,name:`${en} / ${ar}`,price,drink:!!i.drink,qty:1,note:""};
+  update(); toast(`✓ ${en} added`);
+}
+function qty(key,d){ if(!cart[key])return; cart[key].qty+=d; if(cart[key].qty<=0) delete cart[key]; update(); renderCart(); }
+function update(){
+  let n=0,t=0; Object.values(cart).forEach(c=>{n+=c.qty;t+=c.qty*c.price});
+  $("cCount").textContent=n; $("cTotal").textContent=fmt(t); $("cSub").textContent=fmt(t);
+  $("cartbar").style.display = n?"flex":"none";
+  if(!n){ ["cartModal","typeModal","checkoutModal"].forEach(closeModal); }
+}
+function renderCart(){
+  const a=Object.values(cart);
+  $("cartList").innerHTML = a.length ? a.map(c=>`<div class="ci"><div class="ci-top"><div><div class="ci-name">${c.en}<div class="ar" style="text-align:left">${c.ar}</div></div><div class="ci-price">${fmt(c.qty*c.price)} SAR</div></div>
+    <div class="qty"><button onclick="qty('${c.key}',-1)">−</button><b>${c.qty}</b><button onclick="qty('${c.key}',1)">+</button><button class="del" onclick="qty('${c.key}',-999)">🗑</button></div></div>
+    <input class="note" placeholder="✏️ Item note / ملاحظة" value="${c.note.replace(/"/g,'&quot;')}" oninput="cart['${c.key}'].note=this.value"></div>`).join("")
+    : `<div class="empty">Your cart is empty · السلة فارغة</div>`;
+}
+function openModal(id){ if(id==="cartModal") renderCart(); $(id).style.display="flex"; }
+function closeModal(id){ $(id).style.display="none"; }
+function toType(){ if(!Object.keys(cart).length) return; closeModal("cartModal"); openModal("typeModal"); }
+function chooseType(t){ orderType=t; closeModal("typeModal"); openCheckout(); }
+function foodTotal(){ return Object.values(cart).reduce((s,c)=>s+(c.drink?0:c.qty*c.price),0); }
+function openCheckout(){
+  const del = orderType==="delivery";
+  $("typeBadge").textContent = del ? "🛵 DELIVERY · توصيل" : "🛍️ PICK UP · استلام";
+  $("addrGroup").style.display = del ? "block" : "none";
+  const r=$("rates");
+  if(del && SHOP.deliveryRates.length){ r.style.display="block"; r.innerHTML=`<b>Delivery fees / رسوم التوصيل</b><table>${SHOP.deliveryRates.map(x=>`<tr><td>${x[0]}</td><td style="text-align:right">${fmt(x[1])} SAR</td></tr>`).join("")}</table><div class="ar" style="margin-top:6px;font-weight:700;color:var(--red)">المبلغ الإجمالي لا يشمل رسوم التوصيل</div>`; }
+  else r.style.display="none";
+  minOk();
+  let t=0; $("summary").innerHTML = `<b>📋 Order Summary · ملخص الطلب</b>` + Object.values(cart).map(c=>{t+=c.qty*c.price;return `<div style="display:flex;justify-content:space-between;gap:8px;margin-top:6px"><span>${c.qty} × ${c.en}<span class="ar" style="display:block;color:#6b6566">${c.ar}</span></span><b>${fmt(c.qty*c.price)}</b></div>`}).join("") + `<div style="display:flex;justify-content:space-between;margin-top:8px;border-top:1px dashed #ddd;padding-top:8px;font-size:14px"><b>Total</b><b style="color:var(--red)">${fmt(t)} SAR</b></div>`;
+  openModal("checkoutModal");
+}
+function minOk(){
+  const need = orderType==="delivery" && SHOP.minDeliveryFood>0 && foodTotal()<SHOP.minDeliveryFood;
+  const a=$("minAlert"); a.style.display=need?"block":"none";
+  a.innerHTML=`* Delivery requires minimum ${SHOP.minDeliveryFood} SAR food order (drinks excluded).<br>التوصيل يتطلب حد أدنى ${SHOP.minDeliveryFood} ريال للمأكولات.`;
+  return !need;
+}
+function sendOrder(){
+  const name=$("cName").value.trim(), addr=$("cAddr").value.trim(), notes=$("cNotes").value.trim();
+  if(!name){ alert("Please enter your name / الرجاء إدخال الاسم"); return; }
+  if(orderType==="delivery" && !addr){ alert("Please enter your address / الرجاء إدخال العنوان"); return; }
+  if(!minOk()){ alert(`Minimum ${SHOP.minDeliveryFood} SAR food order for delivery`); return; }
+  let txt=`*NEW ORDER - ${SHOP.name}*\n------------------------------\n📍 *Type:* ${orderType==="delivery"?"DELIVERY / توصيل":"PICK UP / استلام"}\n👤 *Name:* ${name}\n`;
+  if(orderType==="delivery") txt+=`🏠 *Address:* ${addr}\n`;
+  if(notes) txt+=`📝 *Notes:* ${notes}\n`;
+  txt+=`------------------------------\n\n`;
+  let t=0; Object.values(cart).forEach(c=>{const s=c.qty*c.price;t+=s;txt+=`*${c.qty} × ${c.en}*\n      ${c.ar} — ${fmt(s)} SAR\n`; if(c.note) txt+=`   ↳ 📝 ${c.note}\n`;});
+  txt+=`\n------------------------------\n💵 *TOTAL: ${fmt(t)} SAR*`;
+  if(orderType==="delivery" && SHOP.deliveryRates.length) txt+=`\n(+ delivery fee / + رسوم التوصيل)`;
+  window.open(`https://wa.me/${SHOP.whatsapp}?text=${encodeURIComponent(txt)}`,"_blank");
+}
+let tt; function toast(m){ const el=$("toast"); el.textContent=m; el.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("show"),1400); }
+init();
+</script>
+</body>
+</html>
